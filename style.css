@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins:wght@400;500&display=swap");
+
+/* Global Styles */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-default: #01214b;
+  --text-color: white;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: var(--bg-default);
+  color: var(--text-color);
+  transition: background 1 ease-in-out;
+  background: linear-gradient(#33d8d8, #0d0f92);
+}
+
+/* Timer Styles */
+div[data-timer] {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-block: 40px;
+  font-size: 8rem;
+  letter-spacing: 5px;
+  text-align: center;
+  font-weight: bold;
+  user-select: none;
+  
+}
+
+/* Button Styles */
+.btn {
+  --color: black;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  border: none;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: 1px solid;
+  box-shadow: 
+    0.5px 1px 0 0 var(--color), 
+    1.5px 2px 0 0 var(--color),
+    2.5px 3px 0 0 var(--color),
+    3.5px 4px 0 0 var(--color),
+    4.5px 5px 0 0 var(--color),
+    5.5px 6px 0 0 var(--color);
+  transition: box-shadow top 0.2s transform left 0.3s;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  transform: translateY(5px) translateX(5px);
+  box-shadow: none;
+}
+
+/* Timer Button Styles */
+.timer-btn {}
+
+/* main-section */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Section Styles */
+section {
+  margin-inline: 1rem;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.158);
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem;
+  box-shadow: 1px 1px 3px;
+}
+
+/* Button Labels */
+[data-pomodoro-btn]::before {
+  content: "Pomodoro";
+}
+
+[data-shortBreak-btn]::before {
+  content: "Short Break";
+}
+
+[data-longBreak-btn]::before {
+  content: "Long Break";
+}
+
+/* Button Bar Styles */
+.btn-bar {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Start-Pause Buttons Styles */
+.start-pause-btns {
+  font-weight: 500;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.start-pause-btns:focus {
+  outline: 2px solid rgb(255, 255, 255);
+  outline-offset: 6px;
+  outline-style: dotted;
+}
+
+[data-pause-btn] {
+  display: none;
+}
+
+/* Header Styles */
+header {
+  max-width: 650px;
+  margin-top: 64px;
+}
+
+.heading {
+  color: white;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.heading > a {
+  color: rgb(227, 226, 226);
+  text-underline-offset: 4px;
+}
+
+.heading > a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.heading > span {
+  background-color: black;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 2rem;
+  font-size: clamp(2rem, 0.6363636363636365rem + 5.818181818181818vw, 3rem);
+}
+
+/* Control Buttons Styles */
+.control-btns {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Footer Styles */
+
+.footer-text {
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-text a {
+  color: inherit;
+}
+
+/* Media Queries */
+@media (width < 35.75em) {
+  .wavy {
+    font-size: 1.9rem;
+  }
+
+  .heading {
+    font-size: 1.4rem;
+  }
+
+  section {
+    width: 100%;
+  }
+
+  .btn {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  div[data-timer] {
+    font-size: 5rem;
+    letter-spacing: 3px;
+    margin-block: 38px;
+  }
+}
+
+@media (max-width: 26.5635rem) {
+  /* Adjust button labels for smaller screens */
+  [data-pomodoro-btn]::before {
+    content: "Pomo";
+  }
+
+  [data-shortBreak-btn]::before {
+    content: "Short";
+  }
+
+  [data-longBreak-btn]::before {
+    content: "Long";
+  }
+}
